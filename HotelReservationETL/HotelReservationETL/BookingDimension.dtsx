@@ -1,0 +1,1257 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/12/2024 3:01:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-8QE8BHS"
+  DTS:CreatorName="DESKTOP-8QE8BHS\eccedentesiast"
+  DTS:DTSID="{11811965-37CC-4EB6-811E-0EB68011F435}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{1813679D-DC09-4CBC-BBC1-FEE23416A052}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8QE8BHS.HotelReservation 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3A0CB170-BAFC-4351-922D-077CF63B6F00}"
+      DTS:ObjectName="DESKTOP-8QE8BHS.HotelReservation 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8QE8BHS;Initial Catalog=HotelReservation;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C119D32E-DC33-43B2-A9C5-4F8C3252D0E2}"
+      DTS:ObjectName="DESKTOP-8QE8BHS.Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8QE8BHS;Initial Catalog=Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C119D32E-DC33-43B2-A9C5-4F8C3252D0E2}DESKTOP-8QE8BHS.Staging;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E9669EAF-AC55-4EDD-8BBA-A91FCC0B7689}"
+      DTS:ObjectName="DESKTOP-8QE8BHS.Staging 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8QE8BHS;Initial Catalog=Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B40E269F-7B4E-4A72-9FF5-7A613CBE609B}"
+      DTS:ObjectName="DESKTOP-8QE8BHS.Staging 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8QE8BHS;Initial Catalog=Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{51D5A3F9-C848-4D64-B2E1-7A4B29B66EA5}"
+      DTS:ObjectName="DESKTOP-8QE8BHS.Staging 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8QE8BHS;Initial Catalog=Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{92ED2C95-6392-4079-92A3-3E9F6002A031}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\KHO_DU_LIEU\Project_Final\HotelReservations.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF-Extract From Source to Stage stgBooking"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{79F1243C-45F1-43C0-8234-952FD760220A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF-Extract From Source to Stage stgBooking"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Hotel Reservations$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[Booking_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[Booking_ID]"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[Booking_ID]"
+                      name="Booking_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_weekend_nights]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_weekend_nights]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_weekend_nights]"
+                      name="no_of_weekend_nights"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_week_nights]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_week_nights]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_week_nights]"
+                      name="no_of_week_nights"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[lead_time]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[lead_time]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[lead_time]"
+                      name="lead_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[avg_price_per_room]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[avg_price_per_room]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[avg_price_per_room]"
+                      name="avg_price_per_room"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_special_requests]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_special_requests]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_special_requests]"
+                      name="no_of_special_requests"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[booking_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[booking_status]"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[booking_status]"
+                      name="booking_status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[Booking_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Booking_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_adults]"
+                      dataType="r8"
+                      name="no_of_adults" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_children]"
+                      dataType="r8"
+                      name="no_of_children" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_weekend_nights]"
+                      dataType="r8"
+                      name="no_of_weekend_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_week_nights]"
+                      dataType="r8"
+                      name="no_of_week_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="255"
+                      name="type_of_meal_plan" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[required_car_parking_space]"
+                      dataType="r8"
+                      name="required_car_parking_space" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="255"
+                      name="room_type_reserved" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[lead_time]"
+                      dataType="r8"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_year]"
+                      dataType="r8"
+                      name="arrival_year" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_month]"
+                      dataType="r8"
+                      name="arrival_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_date]"
+                      dataType="r8"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[market_segment_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="market_segment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[repeated_guest]"
+                      dataType="r8"
+                      name="repeated_guest" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_previous_cancellations]"
+                      dataType="r8"
+                      name="no_of_previous_cancellations" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_previous_bookings_not_canceled]"
+                      dataType="r8"
+                      name="no_of_previous_bookings_not_canceled" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[avg_price_per_room]"
+                      dataType="r8"
+                      name="avg_price_per_room" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_special_requests]"
+                      dataType="r8"
+                      name="no_of_special_requests" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].ExternalColumns[booking_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="booking_status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[Booking_ID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[Booking_ID]"
+                      name="Booking_ID" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[no_of_weekend_nights]"
+                      dataType="r8"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[no_of_weekend_nights]"
+                      name="no_of_weekend_nights" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[no_of_week_nights]"
+                      dataType="r8"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[no_of_week_nights]"
+                      name="no_of_week_nights" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[lead_time]"
+                      dataType="r8"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[lead_time]"
+                      name="lead_time" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[avg_price_per_room]"
+                      dataType="r8"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[avg_price_per_room]"
+                      name="avg_price_per_room" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[no_of_special_requests]"
+                      dataType="r8"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[no_of_special_requests]"
+                      name="no_of_special_requests" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[booking_status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Error Output].Columns[booking_status]"
+                      name="booking_status" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgBooking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Booking_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Booking_ID"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Booking_ID]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[Booking_ID]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_of_weekend_nights]"
+                      cachedDataType="r8"
+                      cachedName="no_of_weekend_nights"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_weekend_nights]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_weekend_nights]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_of_week_nights]"
+                      cachedDataType="r8"
+                      cachedName="no_of_week_nights"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_week_nights]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_week_nights]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lead_time]"
+                      cachedDataType="r8"
+                      cachedName="lead_time"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lead_time]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[lead_time]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_price_per_room]"
+                      cachedDataType="r8"
+                      cachedName="avg_price_per_room"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_price_per_room]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[avg_price_per_room]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_of_special_requests]"
+                      cachedDataType="r8"
+                      cachedName="no_of_special_requests"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_special_requests]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[no_of_special_requests]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[booking_status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="booking_status"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_status]"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output].Columns[booking_status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Booking_ID]"
+                      dataType="wstr"
+                      length="15"
+                      name="Booking_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_weekend_nights]"
+                      dataType="i4"
+                      name="no_of_weekend_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_week_nights]"
+                      dataType="i4"
+                      name="no_of_week_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lead_time]"
+                      dataType="i4"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_price_per_room]"
+                      dataType="r8"
+                      name="avg_price_per_room" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_special_requests]"
+                      dataType="i4"
+                      name="no_of_special_requests" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_status]"
+                      dataType="wstr"
+                      length="15"
+                      name="booking_status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF-Extract From Source to Stage stgBooking.Paths[Excel Source Output]"
+              endId="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\DF-Extract From Source to Stage stgBooking\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF-Load from stgBooking to DimBooking"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{807489F2-E090-441D-A206-F7C8D54BD4D8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF-Load from stgBooking to DimBooking"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgBooking"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimBooking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8QE8BHS.HotelReservation 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8QE8BHS.HotelReservation 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].Columns[lead_time]"
+                      cachedDataType="i4"
+                      cachedName="lead_time"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[Lead_time]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[lead_time]" />
+                    <inputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].Columns[avg_price_per_room]"
+                      cachedDataType="r8"
+                      cachedName="avg_price_per_room"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[avg_price_per_room]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[avg_price_per_room]" />
+                    <inputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].Columns[no_of_week_nights]"
+                      cachedDataType="i4"
+                      cachedName="no_of_week_nights"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[Week_nights]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_week_nights]" />
+                    <inputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].Columns[no_of_weekend_nights]"
+                      cachedDataType="i4"
+                      cachedName="no_of_weekend_nights"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[Weekend_nights]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_weekend_nights]" />
+                    <inputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].Columns[no_of_special_requests]"
+                      cachedDataType="i4"
+                      cachedName="no_of_special_requests"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[SpecialRequests]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_special_requests]" />
+                    <inputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].Columns[booking_status]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="booking_status"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[BookingStatus]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[booking_status]" />
+                    <inputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].Columns[Booking_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Booking_ID"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[BookingID]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[Booking_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[BookingKey]"
+                      dataType="i4"
+                      name="BookingKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[BookingID]"
+                      dataType="wstr"
+                      length="15"
+                      name="BookingID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[BookingStatus]"
+                      dataType="wstr"
+                      length="15"
+                      name="BookingStatus" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[SpecialRequests]"
+                      dataType="bool"
+                      name="SpecialRequests" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[avg_price_per_room]"
+                      dataType="i4"
+                      name="avg_price_per_room" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[Lead_time]"
+                      dataType="i4"
+                      name="Lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[Weekend_nights]"
+                      dataType="i4"
+                      name="Weekend_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input].ExternalColumns[Week_nights]"
+                      dataType="i4"
+                      name="Week_nights" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Stage stgBooking"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgBooking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8QE8BHS.Staging 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[Booking_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[Booking_ID]"
+                      length="15"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[Booking_ID]"
+                      name="Booking_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_weekend_nights]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[no_of_weekend_nights]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_weekend_nights]"
+                      name="no_of_weekend_nights"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_week_nights]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[no_of_week_nights]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_week_nights]"
+                      name="no_of_week_nights"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[lead_time]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[lead_time]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[lead_time]"
+                      name="lead_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[avg_price_per_room]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[avg_price_per_room]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[avg_price_per_room]"
+                      name="avg_price_per_room"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_special_requests]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[no_of_special_requests]"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[no_of_special_requests]"
+                      name="no_of_special_requests"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[booking_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[booking_status]"
+                      length="15"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].Columns[booking_status]"
+                      name="booking_status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[Booking_ID]"
+                      dataType="wstr"
+                      length="15"
+                      name="Booking_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[no_of_weekend_nights]"
+                      dataType="i4"
+                      name="no_of_weekend_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[no_of_week_nights]"
+                      dataType="i4"
+                      name="no_of_week_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[lead_time]"
+                      dataType="i4"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[avg_price_per_room]"
+                      dataType="r8"
+                      name="avg_price_per_room" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[no_of_special_requests]"
+                      dataType="i4"
+                      name="no_of_special_requests" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output].ExternalColumns[booking_status]"
+                      dataType="wstr"
+                      length="15"
+                      name="booking_status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[Booking_ID]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[Booking_ID]"
+                      name="Booking_ID" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[no_of_weekend_nights]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[no_of_weekend_nights]"
+                      name="no_of_weekend_nights" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[no_of_week_nights]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[no_of_week_nights]"
+                      name="no_of_week_nights" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[lead_time]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[lead_time]"
+                      name="lead_time" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[avg_price_per_room]"
+                      dataType="r8"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[avg_price_per_room]"
+                      name="avg_price_per_room" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[no_of_special_requests]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[no_of_special_requests]"
+                      name="no_of_special_requests" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[booking_status]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[booking_status]"
+                      name="booking_status" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF-Load from stgBooking to DimBooking.Paths[OLE DB Source Output]"
+              endId="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL-Truncate stgBooking Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1A1D0DE6-5986-4DCB-9F50-CDD31742199A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL-Truncate stgBooking Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C119D32E-DC33-43B2-A9C5-4F8C3252D0E2}"
+          SQLTask:SqlStatementSource="truncate table stgBooking" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{01961B4E-95F4-43F1-A08D-FED8BC97FBBE}"
+      DTS:From="Package\SQL-Truncate stgBooking Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF-Extract From Source to Stage stgBooking" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5A602833-475D-41E3-BE5A-CE58D2DDA5E0}"
+      DTS:From="Package\DF-Extract From Source to Stage stgBooking"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF-Load from stgBooking to DimBooking" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="299.2,41.6"
+          Id="Package\DF-Extract From Source to Stage stgBooking"
+          TopLeft="240,105" />
+        <NodeLayout
+          Size="279.2,41.6"
+          Id="Package\DF-Load from stgBooking to DimBooking"
+          TopLeft="247,189" />
+        <NodeLayout
+          Size="236,41.6"
+          Id="Package\SQL-Truncate stgBooking Table"
+          TopLeft="203,40" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="321,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.5,23"
+              Start="0,0"
+              End="68.5,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.5"
+                    Point2="0,11.5"
+                    Point3="4,11.5" />
+                  <mssgle:LineSegment
+                    End="64.5,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.5,11.5"
+                    Point2="68.5,11.5"
+                    Point3="68.5,15.5" />
+                  <mssgle:LineSegment
+                    End="68.5,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="388,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF-Extract From Source to Stage stgBooking">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination"
+          TopLeft="266,123" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\DF-Extract From Source to Stage stgBooking\Excel Source"
+          TopLeft="206,31" />
+        <EdgeLayout
+          Id="Package\DF-Extract From Source to Stage stgBooking.Paths[Excel Source Output]"
+          TopLeft="278,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76.5,50"
+              Start="0,0"
+              End="76.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="72.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.5,25"
+                    Point2="76.5,25"
+                    Point3="76.5,29" />
+                  <mssgle:LineSegment
+                    End="76.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Extract From Source to Stage stgBooking\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Extract From Source to Stage stgBooking\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF-Load from stgBooking to DimBooking">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking"
+          TopLeft="136,50" />
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking"
+          TopLeft="154,132" />
+        <EdgeLayout
+          Id="Package\DF-Load from stgBooking to DimBooking.Paths[OLE DB Source Output]"
+          TopLeft="235,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.5,40"
+              Start="0,0"
+              End="17.5,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="4,20" />
+                  <mssgle:LineSegment
+                    End="13.5,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,20"
+                    Point2="17.5,20"
+                    Point3="17.5,24" />
+                  <mssgle:LineSegment
+                    End="17.5,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from stgBooking to DimBooking\DST - Stage stgBooking">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from stgBooking to DimBooking\SRC - Stage stgBooking">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
