@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/13/2024 2:08:28 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-8ULEM8Q"
+  DTS:CreatorName="DESKTOP-8ULEM8Q\YenNhi"
+  DTS:DTSID="{9871514D-DB3D-4C20-A190-068CAC0DDF3C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package5"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{4F1B6244-6A8E-4D34-96AB-57C329C45ADF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{735F7A7E-6FAF-48C5-9369-32980BBC85CF}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{57EB3BE7-0333-4600-870B-033FE73FAB97}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BB678269-8F13-4382-9F2B-753B2115058D}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package5-{BB678269-8F13-4382-9F2B-753B2115058D}DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6152A1ED-EC68-4B3D-9033-412011A24B52}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8CE69C9E-82DD-4470-9365-B4334D3AF474}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{5D1DA6D5-B957-4181-B337-77D2FB825186}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Data warehouse\Project\Hotel Reservations.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Load from stgMealType to DimMealType"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CBA191E2-5D45-4CB6-943F-2CB6D870B21E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Load from stgMealType to DimMealType"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimMealType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[type_of_meal_plan]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="type_of_meal_plan"
+                      externalMetadataColumnId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[type_of_meal_plan]"
+                      lineageId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Output].Columns[type_of_meal_plan]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MealKey]"
+                      dataType="i4"
+                      name="MealKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="20"
+                      name="type_of_meal_plan" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC -Stage stgMealType"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT type_of_meal_plan
+FROM     stgMealType</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Output].Columns[type_of_meal_plan]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Output].ExternalColumns[type_of_meal_plan]"
+                      length="20"
+                      lineageId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Output].Columns[type_of_meal_plan]"
+                      name="type_of_meal_plan"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Output].ExternalColumns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="20"
+                      name="type_of_meal_plan" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Error Output].Columns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Error Output].Columns[type_of_meal_plan]"
+                      name="type_of_meal_plan" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Load from stgMealType to DimMealType.Paths[OLE DB Source Output]"
+              endId="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF-Extract From Source to Stage stgMealType"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{890250DE-64DC-4AC7-BCA3-38855BC739D8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF-Extract From Source to Stage stgMealType"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Hotel Reservations$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].Columns[type_of_meal_plan]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[type_of_meal_plan]"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].Columns[type_of_meal_plan]"
+                      name="type_of_meal_plan"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[Booking_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Booking_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_adults]"
+                      dataType="r8"
+                      name="no_of_adults" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_children]"
+                      dataType="r8"
+                      name="no_of_children" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_weekend_nights]"
+                      dataType="r8"
+                      name="no_of_weekend_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_week_nights]"
+                      dataType="r8"
+                      name="no_of_week_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="255"
+                      name="type_of_meal_plan" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[required_car_parking_space]"
+                      dataType="r8"
+                      name="required_car_parking_space" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="255"
+                      name="room_type_reserved" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[lead_time]"
+                      dataType="r8"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_year]"
+                      dataType="r8"
+                      name="arrival_year" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_month]"
+                      dataType="r8"
+                      name="arrival_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_date]"
+                      dataType="r8"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[market_segment_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="market_segment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[repeated_guest]"
+                      dataType="r8"
+                      name="repeated_guest" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_previous_cancellations]"
+                      dataType="r8"
+                      name="no_of_previous_cancellations" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_previous_bookings_not_canceled]"
+                      dataType="r8"
+                      name="no_of_previous_bookings_not_canceled" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[avg_price_per_room]"
+                      dataType="r8"
+                      name="avg_price_per_room" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_special_requests]"
+                      dataType="r8"
+                      name="no_of_special_requests" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].ExternalColumns[booking_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="booking_status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Error Output].Columns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Error Output].Columns[type_of_meal_plan]"
+                      name="type_of_meal_plan" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgMealType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[type_of_meal_plan]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="type_of_meal_plan"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[type_of_meal_plan]"
+                      lineageId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output].Columns[type_of_meal_plan]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="20"
+                      name="type_of_meal_plan" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF-Extract From Source to Stage stgMealType.Paths[Excel Source Output]"
+              endId="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\DF-Extract From Source to Stage stgMealType\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL-Truncate stgMealType Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9BB8427D-DD3B-4152-A80A-5E2D4FEEE9DA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL-Truncate stgMealType Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BB678269-8F13-4382-9F2B-753B2115058D}"
+          SQLTask:SqlStatementSource="truncate table stgMealType" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{04CEED07-69B7-4A43-B992-92CB6D10529F}"
+      DTS:From="Package\SQL-Truncate stgMealType Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF-Extract From Source to Stage stgMealType" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6572949B-EAC5-4600-A8FE-E42DD26334E0}"
+      DTS:From="Package\DF-Extract From Source to Stage stgMealType"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Load from stgMealType to DimMealType" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\SQL-Truncate stgMealType Table"
+          TopLeft="222.857143331547,50.4705881910547" />
+        <NodeLayout
+          Size="292,41.6"
+          Id="Package\DF - Load from stgMealType to DimMealType"
+          TopLeft="182.857143246398,248.52941154686" />
+        <NodeLayout
+          Size="296,41.6"
+          Id="Package\DF-Extract From Source to Stage stgMealType"
+          TopLeft="195.71428613091,142.588235176146" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="341.885714731229,92.0705881910547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5176469850911"
+              Start="0,0"
+              End="0,43.0176469850911">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.0176469850911" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="343.71428613091,184.188235176146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.8571428845123,64.3411763707143"
+              Start="0,0"
+              End="-14.8571428845123,56.8411763707143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1705881853571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1705881853571"
+                    Point2="0,32.1705881853571"
+                    Point3="-4,32.1705881853571" />
+                  <mssgle:LineSegment
+                    End="-10.8571428845123,32.1705881853571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.8571428845123,32.1705881853571"
+                    Point2="-14.8571428845123,32.1705881853571"
+                    Point3="-14.8571428845123,36.1705881853571" />
+                  <mssgle:LineSegment
+                    End="-14.8571428845123,56.8411763707143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Load from stgMealType to DimMealType">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType"
+          TopLeft="190.999997153878,53.9999991953373" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination"
+          TopLeft="191.999997138977,151.999997735024" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgMealType to DimMealType.Paths[OLE DB Source Output]"
+          TopLeft="287.799997153878,95.5999991953373">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.6000000149012,56.3999985396862"
+              Start="0,0"
+              End="-10.6000000149012,48.8999985396862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1999992698431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1999992698431"
+                    Point2="0,28.1999992698431"
+                    Point3="-4,28.1999992698431" />
+                  <mssgle:LineSegment
+                    End="-6.60000001490118,28.1999992698431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.60000001490118,28.1999992698431"
+                    Point2="-10.6000000149012,28.1999992698431"
+                    Point3="-10.6000000149012,32.1999992698431" />
+                  <mssgle:LineSegment
+                    End="-10.6000000149012,48.8999985396862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DF-Extract From Source to Stage stgMealType">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\DF-Extract From Source to Stage stgMealType\Excel Source"
+          TopLeft="215.714286173485,30.5882352673059" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination"
+          TopLeft="212.85714331026,111.647058725666" />
+        <EdgeLayout
+          Id="Package\DF-Extract From Source to Stage stgMealType.Paths[Excel Source Output]"
+          TopLeft="284.914286173485,72.1882352673059">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.142857136775,39.4588234583606"
+              Start="0,0"
+              End="13.142857136775,31.9588234583606">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.7294117291803" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.7294117291803"
+                    Point2="0,19.7294117291803"
+                    Point3="4,19.7294117291803" />
+                  <mssgle:LineSegment
+                    End="9.14285713677504,19.7294117291803" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.14285713677504,19.7294117291803"
+                    Point2="13.142857136775,19.7294117291803"
+                    Point3="13.142857136775,23.7294117291803" />
+                  <mssgle:LineSegment
+                    End="13.142857136775,31.9588234583606" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Extract From Source to Stage stgMealType\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Extract From Source to Stage stgMealType\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgMealType to DimMealType\SRC -Stage stgMealType">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgMealType to DimMealType\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

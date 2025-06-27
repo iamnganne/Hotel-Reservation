@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/13/2024 2:08:31 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-8ULEM8Q"
+  DTS:CreatorName="DESKTOP-8ULEM8Q\YenNhi"
+  DTS:DTSID="{588AFAB5-7CA7-4AEF-A90C-5347D8A9301E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package6"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{A9E84E6E-52F8-48E2-90D5-7D3B0152C41A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{91DDCCCC-A42E-4A01-97DC-A6CE9469C1D2}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0C1F5E3E-3A6D-491C-AE4B-D6A7B89F4414}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package6-{0C1F5E3E-3A6D-491C-AE4B-D6A7B89F4414}DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C2FFF512-932B-4253-8AFE-D009DE8A4629}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FA4F76C3-605D-4D74-B291-9521CA68A200}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{86DDA61A-264F-49AB-A4A0-2D55DED1D010}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Data warehouse\Project\Hotel Reservations.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Load from stgRoomType to DimRoomType"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ABE0F50E-F537-4864-B3BF-3F0A797EFD43}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Load from stgRoomType to DimRoomType"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimRoomType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[room_type_reserved]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="room_type_reserved"
+                      externalMetadataColumnId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type_reserved]"
+                      lineageId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Output].Columns[room_type_reserved]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RoomTypeKey]"
+                      dataType="i4"
+                      name="RoomTypeKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="20"
+                      name="room_type_reserved" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC -Stage stgRoomType"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT room_type_reserved
+FROM     stgRoomType</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Output].Columns[room_type_reserved]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Output].ExternalColumns[room_type_reserved]"
+                      length="20"
+                      lineageId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Output].Columns[room_type_reserved]"
+                      name="room_type_reserved"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Output].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="20"
+                      name="room_type_reserved" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Error Output].Columns[room_type_reserved]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Error Output].Columns[room_type_reserved]"
+                      name="room_type_reserved" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Load from stgRoomType to DimRoomType.Paths[OLE DB Source Output]"
+              endId="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF-Extract From Source to Stage stgRoomType"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{83D5AD53-2CAF-4AA6-A9F9-BC31F1DC924C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF-Extract From Source to Stage stgRoomType"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Hotel Reservations$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].Columns[room_type_reserved]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[room_type_reserved]"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].Columns[room_type_reserved]"
+                      name="room_type_reserved"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[Booking_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Booking_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_adults]"
+                      dataType="r8"
+                      name="no_of_adults" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_children]"
+                      dataType="r8"
+                      name="no_of_children" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_weekend_nights]"
+                      dataType="r8"
+                      name="no_of_weekend_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_week_nights]"
+                      dataType="r8"
+                      name="no_of_week_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[type_of_meal_plan]"
+                      dataType="wstr"
+                      length="255"
+                      name="type_of_meal_plan" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[required_car_parking_space]"
+                      dataType="r8"
+                      name="required_car_parking_space" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="255"
+                      name="room_type_reserved" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[lead_time]"
+                      dataType="r8"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_year]"
+                      dataType="r8"
+                      name="arrival_year" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_month]"
+                      dataType="r8"
+                      name="arrival_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[arrival_date]"
+                      dataType="r8"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[market_segment_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="market_segment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[repeated_guest]"
+                      dataType="r8"
+                      name="repeated_guest" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_previous_cancellations]"
+                      dataType="r8"
+                      name="no_of_previous_cancellations" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_previous_bookings_not_canceled]"
+                      dataType="r8"
+                      name="no_of_previous_bookings_not_canceled" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[avg_price_per_room]"
+                      dataType="r8"
+                      name="avg_price_per_room" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[no_of_special_requests]"
+                      dataType="r8"
+                      name="no_of_special_requests" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].ExternalColumns[booking_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="booking_status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Error Output].Columns[room_type_reserved]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Error Output].Columns[room_type_reserved]"
+                      name="room_type_reserved" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgRoomType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[room_type_reserved]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="room_type_reserved"
+                      externalMetadataColumnId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type_reserved]"
+                      lineageId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output].Columns[room_type_reserved]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="20"
+                      name="room_type_reserved" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF-Extract From Source to Stage stgRoomType.Paths[Excel Source Output]"
+              endId="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\DF-Extract From Source to Stage stgRoomType\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL-Truncate stgRoomType Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FDCB7986-4AE8-49A7-BD80-69B2D5EB1FA1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL-Truncate stgRoomType Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0C1F5E3E-3A6D-491C-AE4B-D6A7B89F4414}"
+          SQLTask:SqlStatementSource="truncate table stgRoomType" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7BEA09BD-C900-45FC-9162-B62430F20628}"
+      DTS:From="Package\SQL-Truncate stgRoomType Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF-Extract From Source to Stage stgRoomType" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{02F39135-227D-4EBA-8A3B-445512CFDD05}"
+      DTS:From="Package\DF-Extract From Source to Stage stgRoomType"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Load from stgRoomType to DimRoomType" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="300.8,41.6"
+          Id="Package\DF-Extract From Source to Stage stgRoomType"
+          TopLeft="135.714286003186,110.882352843984" />
+        <NodeLayout
+          Size="302.4,41.6"
+          Id="Package\DF - Load from stgRoomType to DimRoomType"
+          TopLeft="146.428571740279,208.764705699363" />
+        <NodeLayout
+          Size="240,41.6"
+          Id="Package\SQL-Truncate stgRoomType Table"
+          TopLeft="116.428571676417,31.3529411489885" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="236.428571676417,72.9529411489885">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.6857143267686,37.9294116949953"
+              Start="0,0"
+              End="49.6857143267686,30.4294116949953">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9647058474976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9647058474976"
+                    Point2="0,18.9647058474976"
+                    Point3="4,18.9647058474976" />
+                  <mssgle:LineSegment
+                    End="45.6857143267686,18.9647058474976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.6857143267686,18.9647058474976"
+                    Point2="49.6857143267686,18.9647058474976"
+                    Point3="49.6857143267686,22.9647058474976" />
+                  <mssgle:LineSegment
+                    End="49.6857143267686,30.4294116949953" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="286.114286003186,152.482352843984">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5142857370936,56.2823528553788"
+              Start="0,0"
+              End="11.5142857370936,48.7823528553788">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1411764276894" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1411764276894"
+                    Point2="0,28.1411764276894"
+                    Point3="4,28.1411764276894" />
+                  <mssgle:LineSegment
+                    End="7.51428573709359,28.1411764276894" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.51428573709359,28.1411764276894"
+                    Point2="11.5142857370936,28.1411764276894"
+                    Point3="11.5142857370936,32.1411764276894" />
+                  <mssgle:LineSegment
+                    End="11.5142857370936,48.7823528553788" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF-Extract From Source to Stage stgRoomType">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\DF-Extract From Source to Stage stgRoomType\Excel Source"
+          TopLeft="141.428571729636,42.0588234925456" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination"
+          TopLeft="202.857143288972,131.529411649415" />
+        <EdgeLayout
+          Id="Package\DF-Extract From Source to Stage stgRoomType.Paths[Excel Source Output]"
+          TopLeft="210.628571729636,83.6588234925456">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.4285715593367,47.8705881568696"
+              Start="0,0"
+              End="77.4285715593367,40.3705881568696">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9352940784348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9352940784348"
+                    Point2="0,23.9352940784348"
+                    Point3="4,23.9352940784348" />
+                  <mssgle:LineSegment
+                    End="73.4285715593367,23.9352940784348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.4285715593367,23.9352940784348"
+                    Point2="77.4285715593367,23.9352940784348"
+                    Point3="77.4285715593367,27.9352940784348" />
+                  <mssgle:LineSegment
+                    End="77.4285715593367,40.3705881568696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DF - Load from stgRoomType to DimRoomType">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType"
+          TopLeft="235.999996483326,55.999999165535" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination"
+          TopLeft="284.999995753169,157.999997645617" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgRoomType to DimRoomType.Paths[OLE DB Source Output]"
+          TopLeft="335.599996483326,97.599999165535">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.5999992698431,60.3999984800816"
+              Start="0,0"
+              End="34.5999992698431,52.8999984800816">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1999992400408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.1999992400408"
+                    Point2="0,30.1999992400408"
+                    Point3="4,30.1999992400408" />
+                  <mssgle:LineSegment
+                    End="30.5999992698431,30.1999992400408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.5999992698431,30.1999992400408"
+                    Point2="34.5999992698431,30.1999992400408"
+                    Point3="34.5999992698431,34.1999992400408" />
+                  <mssgle:LineSegment
+                    End="34.5999992698431,52.8999984800816" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Extract From Source to Stage stgRoomType\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Extract From Source to Stage stgRoomType\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgRoomType to DimRoomType\SRC -Stage stgRoomType">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgRoomType to DimRoomType\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

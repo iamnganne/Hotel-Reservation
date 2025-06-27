@@ -1,0 +1,2911 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/13/2024 2:08:34 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-8ULEM8Q"
+  DTS:CreatorName="DESKTOP-8ULEM8Q\YenNhi"
+  DTS:DTSID="{6F493C62-5689-4AE7-B065-DC5EE50E01A4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CancellationFact"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{D847F74A-34F3-4468-A08D-B28A8D263FE1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E2CE483E-AEAB-45C0-A7B7-8C0698C5E0EF}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9BAD7795-8F5A-4D79-A9B4-5230F10528B2}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-BookingFact-{9BAD7795-8F5A-4D79-A9B4-5230F10528B2}DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FA27FF03-0620-41C4-AD3F-0114B147482B}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{79D76ED1-D851-4936-88D0-D613B0F6657F}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8B3A5B57-3EEB-43FE-9655-0D7C64CF6A1B}"
+      DTS:ObjectName="DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8ULEM8Q\MSSQLSERVER15;Initial Catalog=BookingHotelStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{ACE93DE7-5CBE-4517-B6F5-10D153CB5BCB}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Data warehouse\Project\Hotel Reservations.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{045183C9-3CF8-4440-A2C2-16CA6D25EC4B}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Data warehouse\Project\Hotel Reservations.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Booking_ID"
+              DTS:DTSID="{25DEC9DC-7FF3-41EB-87FF-06744C3E3F98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_adults"
+              DTS:DTSID="{8EFF8269-6979-4490-94A8-49699E125D92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_children"
+              DTS:DTSID="{76AB0ABC-DCB8-4EF0-A033-B3752CBBA31F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_weekend_nights"
+              DTS:DTSID="{B1CCC3E3-BBE5-4FA3-B231-CDE265AF15C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_week_nights"
+              DTS:DTSID="{D4607614-0BE8-45E7-8719-C97416EC2AF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="type_of_meal_plan"
+              DTS:DTSID="{65F43FDE-2258-49F8-AEA7-FBB97C522533}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="required_car_parking_space"
+              DTS:DTSID="{90F093CB-8A3E-4063-9EE2-907A6EC45DAF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_type_reserved"
+              DTS:DTSID="{31640CAC-6DFC-465E-8691-3B2AC2AEDF14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="lead_time"
+              DTS:DTSID="{8A6BB98C-B8E6-4CB4-91B7-5DC7EABE3423}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="arrival_year"
+              DTS:DTSID="{F8454F7F-8196-41A9-8FF1-3864869BC920}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="arrival_month"
+              DTS:DTSID="{B8024FB5-3BD7-4B8F-8E7C-D8CA59650099}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="arrival_date"
+              DTS:DTSID="{13FF286C-1334-4AFD-B441-072C1899DDB4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="market_segment_type"
+              DTS:DTSID="{4C9BE07B-D079-4BB1-9828-11C590DAC930}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="repeated_guest"
+              DTS:DTSID="{BA9AF3E2-5108-4BBA-8DB6-8992796B50A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_previous_cancellations"
+              DTS:DTSID="{094ABD57-F88C-49E8-A94A-04C127CC0B70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_previous_bookings_not_canceled"
+              DTS:DTSID="{900B6FB5-4DF5-4CA7-B494-B32225AFAE55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="avg_price_per_room"
+              DTS:DTSID="{552ECF90-5787-4183-A759-30A739C5B007}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_special_requests"
+              DTS:DTSID="{2ADA8289-3CE4-4F79-A1D4-A3DFED66E473}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="booking_status"
+              DTS:DTSID="{C8351B9E-CC91-4939-881B-1A0DD2222879}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{153427FB-29AA-40A9-8858-B6572FA9BE1C}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Data warehouse\Project\Hotel Reservations.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Booking_ID"
+              DTS:DTSID="{31616E3D-B950-4412-880B-973E1229CD4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_adults"
+              DTS:DTSID="{2B7E4A72-9A32-4C52-9F0A-23D78A0370B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_children"
+              DTS:DTSID="{1579569D-D2C8-478E-A6B7-BF7A836AC40A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_weekend_nights"
+              DTS:DTSID="{58A03045-64D8-4109-9A47-5A09162368FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_week_nights"
+              DTS:DTSID="{3734C19D-5089-4F73-BBFA-334DB12F38B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="type_of_meal_plan"
+              DTS:DTSID="{0F285460-EAB6-456C-8E9C-9CB3AE595528}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="required_car_parking_space"
+              DTS:DTSID="{1C0EBB4F-9A91-4CBA-88FE-BC82031C2B39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_type_reserved"
+              DTS:DTSID="{A0E7B176-5558-4385-91CF-FF33332E4B15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="lead_time"
+              DTS:DTSID="{5D21F52A-A818-405E-8CDF-0D6A0406D429}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="arrival_year"
+              DTS:DTSID="{50382297-D7BC-4B06-827B-0F06CBDE7999}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="arrival_month"
+              DTS:DTSID="{D98EFB33-4AA2-414C-A06C-EA26D00784A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="arrival_date"
+              DTS:DTSID="{1F0A1470-109F-419D-9737-B2796B28C6FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="market_segment_type"
+              DTS:DTSID="{B3E76162-0851-4E5C-AA8B-5652A3C263C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="repeated_guest"
+              DTS:DTSID="{4F600AF9-994F-48C4-8C80-DB6805B2B3B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_previous_cancellations"
+              DTS:DTSID="{B91A327B-5174-422B-BC19-D6EAFF9C6C80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_previous_bookings_not_canceled"
+              DTS:DTSID="{C47232BF-AB2B-4D28-9A24-7975FDA1554C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="avg_price_per_room"
+              DTS:DTSID="{4E0BE96D-F9EE-4C45-B067-88A1E28E3FA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="no_of_special_requests"
+              DTS:DTSID="{452D4A2F-B1FF-4834-91E1-9F51EDD297EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="booking_status"
+              DTS:DTSID="{B5AF8093-8477-4A7E-9BD7-ED1BD4FD7808}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF-Extract From Source to StageCancellationFact"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{37D94681-AB5D-43CC-A1C5-26A4FE8B6C09}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF-Extract From Source to StageCancellationFact"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_year]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[arrival_year]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_year]"
+                      name="arrival_year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_month]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[arrival_month]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_month]"
+                      name="arrival_month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_date]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[arrival_date]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_date]"
+                      name="arrival_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[lead_time]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[lead_time]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[lead_time]"
+                      name="lead_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[booking_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[booking_status]"
+                      length="50"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[booking_status]"
+                      name="booking_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[room_type_reserved]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_type_reserved]"
+                      length="50"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[room_type_reserved]"
+                      name="room_type_reserved"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[market_segment_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[market_segment_type]"
+                      length="50"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[market_segment_type]"
+                      name="market_segment_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[Booking_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Booking_ID]"
+                      length="50"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[Booking_ID]"
+                      name="Booking_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Booking_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Booking_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[no_of_adults]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="no_of_adults" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[no_of_children]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="no_of_children" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[no_of_weekend_nights]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="no_of_weekend_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[no_of_week_nights]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="no_of_week_nights" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[type_of_meal_plan]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="type_of_meal_plan" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[required_car_parking_space]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="required_car_parking_space" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_type_reserved]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="room_type_reserved" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[lead_time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[arrival_year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="arrival_year" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[arrival_month]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="arrival_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[arrival_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[market_segment_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="market_segment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[repeated_guest]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="repeated_guest" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[no_of_previous_cancellations]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="no_of_previous_cancellations" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[no_of_previous_bookings_not_canceled]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="no_of_previous_bookings_not_canceled" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[avg_price_per_room]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="avg_price_per_room" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[no_of_special_requests]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="no_of_special_requests" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[booking_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="booking_status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgCancellationFact]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[arrival_year]"
+                      cachedDataType="r8"
+                      cachedName="arrival_year"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_year]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_year]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[arrival_month]"
+                      cachedDataType="r8"
+                      cachedName="arrival_month"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_month]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_month]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[arrival_date]"
+                      cachedDataType="r8"
+                      cachedName="arrival_date"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_date]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[arrival_date]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lead_time]"
+                      cachedDataType="r8"
+                      cachedName="lead_time"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lead_time]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[lead_time]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[booking_status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="booking_status"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_status]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[booking_status]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[room_type_reserved]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="room_type_reserved"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type_reserved]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[room_type_reserved]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[market_segment_type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="market_segment_type"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[market_segment_type]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[market_segment_type]" />
+                    <inputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Booking_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Booking_ID"
+                      externalMetadataColumnId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Booking_ID]"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output].Columns[Booking_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_year]"
+                      dataType="i4"
+                      name="arrival_year" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_month]"
+                      dataType="i4"
+                      name="arrival_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_date]"
+                      dataType="i4"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lead_time]"
+                      dataType="i4"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_status]"
+                      dataType="wstr"
+                      length="15"
+                      name="booking_status" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="20"
+                      name="room_type_reserved" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[market_segment_type]"
+                      dataType="wstr"
+                      length="20"
+                      name="market_segment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Booking_ID]"
+                      dataType="wstr"
+                      length="15"
+                      name="Booking_ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF-Extract From Source to StageCancellationFact.Paths[Flat File Source Output]"
+              endId="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\DF-Extract From Source to StageCancellationFact\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF-Load from StageCancellationFact to FactCancellation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F38E45D1-F221-4211-A850-9994737D809F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF-Load from StageCancellationFact to FactCancellation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1].Columns[RoomTypeKey]"
+                      cachedDataType="i4"
+                      cachedName="RoomTypeKey"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Match Output].Columns[RoomTypeKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1].Columns[MarketSegmentKey]"
+                      cachedDataType="i4"
+                      cachedName="MarketSegmentKey"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Match Output].Columns[MarketSegmentKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Match Output].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1].Columns[BookingKey]"
+                      cachedDataType="i4"
+                      cachedName="BookingKey"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Match Output].Columns[BookingKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1].Columns[booking_status]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="booking_status"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[booking_status]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1].Columns[lead_time]"
+                      cachedDataType="i4"
+                      cachedName="lead_time"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[lead_time]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[MarketSegmentKey]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[MarketSegmentKey]"
+                      name="MarketSegmentKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Match Output].Columns[MarketSegmentKey]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[RoomTypeKey]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[RoomTypeKey]"
+                      name="RoomTypeKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Match Output].Columns[RoomTypeKey]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[booking_status]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[booking_status]"
+                      name="booking_status">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[booking_status]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[BookingKey]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[BookingKey]"
+                      name="BookingKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Match Output].Columns[BookingKey]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[lead_time]"
+                      dataType="i8"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[lead_time]"
+                      name="lead_time">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[lead_time]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[DateKey]"
+                      name="DateKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Match Output].Columns[DateKey]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimBooking"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimBooking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimBooking]) [refTable]
+where [refTable].[BookingID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="BookingKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BookingID" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BookingStatus" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpecialRequests" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="avg_price_per_room" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Lead_time" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Weekend_nights" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Week_nights" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="no_of_adults" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="no_of_childrens" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="required_car_parking_space" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[Booking_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Inputs[Lookup Input].Columns[Booking_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Booking_ID"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[Booking_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">BookingID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Match Output].Columns[BookingKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Match Output].Columns[BookingKey]"
+                      name="BookingKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">BookingKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimDate"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[Arrival_year] = ? and [refTable].[Arrival_date] = ? and [refTable].[Arrival_month] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Arrival_date" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Arrival_month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Arrival_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_year]};#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_date]};#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_month]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input].Columns[arrival_year]"
+                      cachedDataType="i4"
+                      cachedName="arrival_year"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_year]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Arrival_year</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input].Columns[arrival_date]"
+                      cachedDataType="i4"
+                      cachedName="arrival_date"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Arrival_date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input].Columns[arrival_month]"
+                      cachedDataType="i4"
+                      cachedName="arrival_month"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_month]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Arrival_month</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Match Output].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Match Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimMarketSegmentType"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimMarketSegmentType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimMarketSegmentType]) [refTable]
+where [refTable].[market_segment_type] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MarketSegmentKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="market_segment_type" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[market_segment_type]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Inputs[Lookup Input].Columns[market_segment_type]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="market_segment_type"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[market_segment_type]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">market_segment_type</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Match Output].Columns[MarketSegmentKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Match Output].Columns[MarketSegmentKey]"
+                      name="MarketSegmentKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MarketSegmentKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimRoomType"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimRoomType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimRoomType]) [refTable]
+where [refTable].[room_type_reserved] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RoomTypeKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="room_type_reserved" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[room_type_reserved]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Inputs[Lookup Input].Columns[room_type_reserved]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="room_type_reserved"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[room_type_reserved]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">room_type_reserved</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Match Output].Columns[RoomTypeKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Match Output].Columns[RoomTypeKey]"
+                      name="RoomTypeKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">RoomTypeKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Cancellation_fact]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RoomTypeKey]"
+                      cachedDataType="i4"
+                      cachedName="RoomTypeKey"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RoomTypeKey]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[RoomTypeKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MarketSegmentKey]"
+                      cachedDataType="i4"
+                      cachedName="MarketSegmentKey"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MarketSegmentKey]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[MarketSegmentKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BookingKey]"
+                      cachedDataType="i4"
+                      cachedName="BookingKey"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BookingKey]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[BookingKey]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[booking_status]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="booking_status"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BookingStatus]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[booking_status]" />
+                    <inputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lead_time]"
+                      cachedDataType="i8"
+                      cachedName="lead_time"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lead_time]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1].Columns[lead_time]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BookingKey]"
+                      dataType="i4"
+                      name="BookingKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MarketSegmentKey]"
+                      dataType="i4"
+                      name="MarketSegmentKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RoomTypeKey]"
+                      dataType="i4"
+                      name="RoomTypeKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BookingStatus]"
+                      dataType="wstr"
+                      length="15"
+                      name="BookingStatus" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lead_time]"
+                      dataType="i4"
+                      name="Lead_time" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgCancellationFact]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8ULEM8Q\MSSQLSERVER15.BookingHotelStage 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[Booking_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Booking_ID]"
+                      length="15"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[Booking_ID]"
+                      name="Booking_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[room_type_reserved]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[room_type_reserved]"
+                      length="20"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[room_type_reserved]"
+                      name="room_type_reserved"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[lead_time]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lead_time]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[lead_time]"
+                      name="lead_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_year]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_year]"
+                      name="arrival_year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_date]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_date]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_date]"
+                      name="arrival_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_month]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_month]"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_month]"
+                      name="arrival_month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[market_segment_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[market_segment_type]"
+                      length="20"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[market_segment_type]"
+                      name="market_segment_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[booking_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[booking_status]"
+                      length="15"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].Columns[booking_status]"
+                      name="booking_status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Booking_ID]"
+                      dataType="wstr"
+                      length="15"
+                      name="Booking_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[room_type_reserved]"
+                      dataType="wstr"
+                      length="20"
+                      name="room_type_reserved" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lead_time]"
+                      dataType="i4"
+                      name="lead_time" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_year]"
+                      dataType="i4"
+                      name="arrival_year" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_date]"
+                      dataType="i4"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arrival_month]"
+                      dataType="i4"
+                      name="arrival_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[market_segment_type]"
+                      dataType="wstr"
+                      length="20"
+                      name="market_segment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[booking_status]"
+                      dataType="wstr"
+                      length="15"
+                      name="booking_status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Booking_ID]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Booking_ID]"
+                      name="Booking_ID" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[room_type_reserved]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[room_type_reserved]"
+                      name="room_type_reserved" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lead_time]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lead_time]"
+                      name="lead_time" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_year]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_year]"
+                      name="arrival_year" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_date]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_date]"
+                      name="arrival_date" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_month]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arrival_month]"
+                      name="arrival_month" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[market_segment_type]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[market_segment_type]"
+                      name="market_segment_type" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[booking_status]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[booking_status]"
+                      name="booking_status" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Aggregate Output 1]"
+              endId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output]"
+              endId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output1]"
+              endId="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate.Inputs[Aggregate Input 1]"
+              name="Lookup Match Output"
+              startId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output2]"
+              endId="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output3]"
+              endId="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[OLE DB Source Output]"
+              endId="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BA297290-2872-44FC-BAF6-7EA48C6522F8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BAD7795-8F5A-4D79-A9B4-5230F10528B2}"
+          SQLTask:SqlStatementSource="truncate table stgCancellationFact;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{72853659-CDDD-4691-A316-59B8C3C44955}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF-Extract From Source to StageCancellationFact" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5D70C95A-23DD-48C9-8372-8B1DEDE64284}"
+      DTS:From="Package\DF-Extract From Source to StageCancellationFact"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF-Load from StageCancellationFact to FactCancellation" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="309.6,41.6"
+          Id="Package\DF-Extract From Source to StageCancellationFact"
+          TopLeft="135.00000028738,186.588235130566" />
+        <NodeLayout
+          Size="341.6,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation"
+          TopLeft="136.428571718992,277.588235050801" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="170.714286077692,81.0588234583606" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="251.914286077692,122.658823458361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.885714209688,63.9294116722054"
+              Start="0,0"
+              End="37.885714209688,56.4294116722054">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9647058361027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.9647058361027"
+                    Point2="0,31.9647058361027"
+                    Point3="4,31.9647058361027" />
+                  <mssgle:LineSegment
+                    End="33.885714209688,31.9647058361027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.885714209688,31.9647058361027"
+                    Point2="37.885714209688,31.9647058361027"
+                    Point3="37.885714209688,35.9647058361027" />
+                  <mssgle:LineSegment
+                    End="37.885714209688,56.4294116722054" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="289.80000028738,228.188235130566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.428571431612,49.399999920235"
+              Start="0,0"
+              End="17.428571431612,41.899999920235">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.6999999601175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6999999601175"
+                    Point2="0,24.6999999601175"
+                    Point3="4,24.6999999601175" />
+                  <mssgle:LineSegment
+                    End="13.428571431612,24.6999999601175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.428571431612,24.6999999601175"
+                    Point2="17.428571431612,24.6999999601175"
+                    Point3="17.428571431612,28.6999999601175" />
+                  <mssgle:LineSegment
+                    End="17.428571431612,41.899999920235" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF-Extract From Source to StageCancellationFact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\DF-Extract From Source to StageCancellationFact\Flat File Source"
+          TopLeft="328.571429270871,48.1764705460068" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination"
+          TopLeft="362.857143629571,114.705882252397" />
+        <EdgeLayout
+          Id="Package\DF-Extract From Source to StageCancellationFact.Paths[Flat File Source Output]"
+          TopLeft="403.771429270871,89.7764705460068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.2857143586995,24.9294117063902"
+              Start="0,0"
+              End="44.2857143586995,17.4294117063902">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.46470585319512" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.46470585319512"
+                    Point2="0,12.4647058531951"
+                    Point3="4,12.4647058531951" />
+                  <mssgle:LineSegment
+                    End="40.2857143586995,12.4647058531951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.2857143586995,12.4647058531951"
+                    Point2="44.2857143586995,12.4647058531951"
+                    Point3="44.2857143586995,16.4647058531951" />
+                  <mssgle:LineSegment
+                    End="44.2857143586995,17.4294117063902" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DF-Load from StageCancellationFact to FactCancellation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType"
+          TopLeft="904.999986514449,248.999996289611" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination"
+          TopLeft="286.999995723367,250.399997198581" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source"
+          TopLeft="58.9999991208315,99.9999985098839" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking"
+          TopLeft="369.99999448657,102.99999846518" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate"
+          TopLeft="659.599992936847,108.999998375773" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation\Aggregate"
+          TopLeft="617.999990791083,249.399997213483" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType"
+          TopLeft="894.999988630417,111.99999833107" />
+        <EdgeLayout
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output]"
+          TopLeft="778.799992936848,131.299998353422">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.199995693569,0"
+              Start="0,0"
+              End="108.699995693569,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="108.699995693569,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.15861112803473,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Aggregate Output 1]"
+          TopLeft="617.999990791083,270.699997206032">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-160.599995067716,0"
+              Start="0,0"
+              End="-153.099995067716,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-153.099995067716,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output1]"
+          TopLeft="904.999986514449,269.999996751547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-160.599995723366,0"
+              Start="0,0"
+              End="-153.099995723366,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-153.099995723366,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.741384580433,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[OLE DB Source Output]"
+          TopLeft="208.599999120832,122.299998487532">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="161.399995365739,0"
+              Start="0,0"
+              End="153.899995365739,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="153.899995365739,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output2]"
+          TopLeft="504.39999448657,126.799998420477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.199998450277,0"
+              Start="0,0"
+              End="147.699998450277,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="147.699998450277,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.6586125063885,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF-Load from StageCancellationFact to FactCancellation.Paths[Lookup Match Output3]"
+          TopLeft="991.799988630417,153.59999833107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.2000021159682,95.3999979585409"
+              Start="0,0"
+              End="-13.2000021159682,87.8999979585409">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.6999989792705" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.6999989792705"
+                    Point2="0,47.6999989792705"
+                    Point3="-4,47.6999989792705" />
+                  <mssgle:LineSegment
+                    End="-9.20000211596823,47.6999989792705" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.20000211596823,47.6999989792705"
+                    Point2="-13.2000021159682,47.6999989792705"
+                    Point3="-13.2000021159682,51.6999989792705" />
+                  <mssgle:LineSegment
+                    End="-13.2000021159682,87.8999979585409" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-54.7913877767341,52.6999989792705,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from StageCancellationFact to FactCancellation\DimRoomType">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimRoomType]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from StageCancellationFact to FactCancellation\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from StageCancellationFact to FactCancellation\DimBooking">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBooking]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from StageCancellationFact to FactCancellation\DimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Load from StageCancellationFact to FactCancellation\DimMarketSegmentType">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMarketSegmentType]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF-Extract From Source to StageCancellationFact\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

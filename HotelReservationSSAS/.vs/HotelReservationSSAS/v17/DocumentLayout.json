@@ -1,0 +1,148 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Booking Hotel DW Cube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Booking Hotel DW Cube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Room Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Dim Room Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Booking.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Dim Booking.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Customer Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Dim Customer Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Market Segment Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Dim Market Segment Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Meal Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Dim Meal Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Booking Hotel DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FB1DFE03-6A7E-4999-9DD3-3A3E778E1351}|HotelReservationSSAS\\HotelReservationSSAS.dwproj|solutionrelative:HotelReservationSSAS\\Booking Hotel DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dim Customer Type.dim [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Customer Type.dim",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Dim Customer Type.dim",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Customer Type.dim [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Dim Customer Type.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:49:50.869Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dim Booking.dim [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Booking.dim",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Dim Booking.dim",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Booking.dim [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Dim Booking.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:48:31.102Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Date.dim",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Dim Date.dim",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Date.dim [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:47:21.138Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Room Type.dim [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Room Type.dim",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Dim Room Type.dim",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Room Type.dim [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Dim Room Type.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:47:19.533Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Booking Hotel DW Cube.cube [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Booking Hotel DW Cube.cube",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Booking Hotel DW Cube.cube",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Booking Hotel DW Cube.cube [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Booking Hotel DW Cube.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:47:14.67Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dim Market Segment Type.dim [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Market Segment Type.dim",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Dim Market Segment Type.dim",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Market Segment Type.dim [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Dim Market Segment Type.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:51:10.199Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dim Meal Type.dim [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Meal Type.dim",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Dim Meal Type.dim",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Dim Meal Type.dim [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Dim Meal Type.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:52:17.822Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Booking Hotel DW.dsv [Design]",
+              "DocumentMoniker": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Booking Hotel DW.dsv",
+              "RelativeDocumentMoniker": "HotelReservationSSAS\\Booking Hotel DW.dsv",
+              "ToolTip": "D:\\Data warehouse\\Project\\HotelReservationSSAS\\HotelReservationSSAS\\Booking Hotel DW.dsv [Design]",
+              "RelativeToolTip": "HotelReservationSSAS\\Booking Hotel DW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-13T18:14:31.915Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
