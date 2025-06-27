@@ -1,9 +1,9 @@
 # 🏨 Hotel Reservation ETL Project 
 This project demonstrate an end-to-end **ETL Pipeline** for **Hotel Reservation**, store it in SQL Server databse using the Star Schema model, and visualize the data using Power BI. The ETL process implemented using SSIS (SQL Server Integration Services).
--- **SQL Server** as the data warehouse 
--- **SSIS** for the ETL process 
--- **Power BI** for dashboard visualization 
--- A **Star Schema** data model with **Fact** and **Dimension** tables 
+- **SQL Server** as the data warehouse 
+- **SSIS** for the ETL process 
+- **Power BI** for dashboard visualization 
+- A **Star Schema** data model with **Fact** and **Dimension** tables 
 
 ## Data Structure 
 The project ues the Star Schema, include Fact and Dimension tables
